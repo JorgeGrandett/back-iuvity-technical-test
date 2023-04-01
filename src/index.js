@@ -1,4 +1,5 @@
 const fastify = require('fastify')({ logger: true });
+const db = require('./utils/db');
 
 fastify.register(require('./app'))
 
@@ -12,3 +13,4 @@ const start = async () => {
   }
 }
 start();
+db();
