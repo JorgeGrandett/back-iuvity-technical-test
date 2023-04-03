@@ -39,7 +39,7 @@ const createUser = async function(request, reply) {
         }
         const userData = {
             name: request.body.user.name,
-            lastName: request.body.user.last_name,
+            lastName: request.body.user.lastName,
             id: request.body.user.id,
             age: request.body.user.age,
             email: request.body.user.email,
@@ -55,7 +55,7 @@ const createUser = async function(request, reply) {
         const searchId = await User.find({id: userData.id});
 
         if(searchId.length != 0) {
-            return reply.code(404).send(`Ya existe un usuario registrado con el ID ${userData.id}`);
+            return reply.code(409).send(`Ya existe un usuario registrado con el ID ${userData.id}`);
         } 
 
         let userAux = new User (userData);
@@ -75,7 +75,7 @@ const updateUser = async function(request, reply) {
         }
         const userData = {
             name: request.body.user.name,
-            lastName: request.body.user.last_name,
+            lastName: request.body.user.lastName,
             id: request.body.user.id,
             age: request.body.user.age,
             email: request.body.user.email,
