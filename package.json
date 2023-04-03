@@ -1,10 +1,10 @@
 {
   "dependencies": {
     "@fastify/autoload": "^5.7.1",
+    "@fastify/cors": "^8.2.1",
     "boom": "^7.3.0",
     "dotenv": "^16.0.3",
     "fastify": "^4.15.0",
-    "fastify-swagger": "^5.2.0",
     "mongoose": "^7.0.3"
   },
   "name": "mongodb-fastify-uvity",
@@ -14,7 +14,8 @@
     "nodemon": "^2.0.22"
   },
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
